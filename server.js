@@ -5,11 +5,11 @@ var express = require('express'),
       mongoose = require('mongoose'),
       config = require('./config/DB');
 
-      mongoose.Promise = global.Promise;
-      mongoose.connect(config.DB).then(
-          () => {console.log('Database is connected') },
-          err => { console.log('Can not connect to the database'+ err)}
-        );
+mongoose.Promise = global.Promise;
+mongoose.connect(config.DB).then(
+    () => {console.log('Database is connected') },
+    err => { console.log('Can not connect to the database'+ err)}
+);
 
 const app = express();
 var port = process.env.PORT || 4000;

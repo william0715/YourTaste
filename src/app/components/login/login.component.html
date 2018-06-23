@@ -1,21 +1,20 @@
 <div class="center">
   <img src="../../../assets/image/Logo.png" style="border-radius: 5px;" alt="Logo">
   <div style="margin-top:10px">
-      <div class="form-group row">
-      <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
-      <div class="col-sm-10">
-        <input type="textbox" class="form-control" id="inputID" placeholder="ID">
-      </div>
-  </div>
     <div class="form-group row">
-      <label for="inputPassword" class="col-sm-2 col-form-label">PW</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-      </div>
+    <label class="col-sm-2 col-form-label">ID</label>
+    <div class="col-sm-10">
+      <input type="textbox" class="form-control" [(ngModel)]="userID" placeholder="ID">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">PW</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" [(ngModel)]="userPW" placeholder="Password">
     </div>
   </div>
   <div align="center" style="margin-top:5px">      
       <button type="button" class="btn btn-info">Sign Up</button>
-      <button type="button" class="btn btn-primary" style="margin-left:5px">Login</button>
+      <button type="button" class="btn btn-primary" style="margin-left:5px" (click)="login()">Login</button>
   </div>
 </div>
