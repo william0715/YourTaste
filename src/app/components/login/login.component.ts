@@ -25,12 +25,33 @@ export class LoginComponent implements OnInit {
       PW: this.userPW
     }
 
-    this.http.post('url', User).subscribe(
+    this.http.post('http://localhost:4000/users/login', User).subscribe(
       (res) => {
-        
+        console.log('Login!!');
       },
       (err) => {
+        console.log('Login failed.');
+      });
+  }
 
+  add() {
+    var User = {
+      ID: this.userID,
+      PW: this.userPW
+    }
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin':  '*'
+      })
+    };
+    
+    this.http.post('http://localhost:4000/users/add', User, httpOptions).subscribe(
+      (res) => {
+        console.log('Add user!!');
+      },
+      (err) => {
+        console.log('Add user failed.');
       });
   }
 }
